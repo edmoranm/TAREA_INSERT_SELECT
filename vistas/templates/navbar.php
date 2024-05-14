@@ -11,11 +11,11 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-boxes me-2"></i>CLIENTES
+            <i class="bi bi-file-person me-2"></i>CLIENTES
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="../clientes/index.php"><i class="bi bi-plus-circle me-2"></i>Crear</a></li>
-            <li><a class="dropdown-item" href="/vistas/clientes/buscar.php"><i class="bi bi-search me-2"></i>Buscar</a></li>
+            <li><a class="dropdown-item" href="../clientes/index.php"><i class="bi bi-plus-circle me-2"></i>CREAR</a></li>
+            <li><a class="dropdown-item" href="/vistas/clientes/buscar.php"><i class="bi bi-search me-2"></i>BUSCAR</a></li>
           </ul>
         </li>
     </div>
