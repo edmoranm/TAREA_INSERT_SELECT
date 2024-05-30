@@ -9,6 +9,7 @@
         // var_dump($_GET);
         $_GET['cli_nombre'] = htmlspecialchars( $_GET['cli_nombre']);
         $_GET['cli_apellido'] = htmlspecialchars( $_GET['cli_apellido']);
+    
         $objCliente = new Cliente($_GET);
         $clientes = $objCliente->buscar();
         $resultado = [

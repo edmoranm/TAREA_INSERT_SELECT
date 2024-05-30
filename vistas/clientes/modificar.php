@@ -1,13 +1,17 @@
 <?php
 
     require '../../modelos/Cliente.php';
+
+    ini_set('display_errors', '1');
+    ini_set('display_startup_errors', '1');
+    error_reporting(E_ALL);
+
     
     $_GET['cli_id'] = filter_var( base64_decode($_GET['cli_id']), FILTER_SANITIZE_NUMBER_INT);
+    
     $cliente = new Cliente();
-
-    $ClienteRegistrado = $Cliente->buscarPorId($_GET['cli_id']);
-    var_dump($ClienteRegistrado);
-?>
+    $ClienteRegistrado = $Cliente->buscarId($_GET['cli_id']);
+    ?>
 
 <?php include_once '../templates/header.php'; ?>
 

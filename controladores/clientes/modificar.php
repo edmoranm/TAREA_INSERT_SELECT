@@ -2,11 +2,16 @@
 
 require '../../modelos/Cliente.php';
 
+   ini_set('display_errors', '1');
+    ini_set('display_startup_errors', '1');
+    error_reporting(E_ALL);
+
 // VALIDAR INFORMACION
 $_POST['cli_nombre'] = htmlspecialchars($_POST['cli_nombre']);
 $_POST['cli_apellido'] = htmlspecialchars($_POST['cli_apellido']);
 $_POST['cli_nit'] = filter_var($nit, FILTER_VALIDATE_INT);
 $_POST['cli_telefono'] = filter_var($telefono, FILTER_VALIDATE_INT);
+
 
 
 
