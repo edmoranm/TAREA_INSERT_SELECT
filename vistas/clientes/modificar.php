@@ -15,11 +15,11 @@
 <div class="row justify-content-center">
     <form action="/crud_2024/controladores/clientes/modificar.php" method="POST" class="border bg-light shadow rounded p-4 col-lg-6">
         
-        <input type="hidden" name="prod_id" id="prod_id" value="<?= $ClienteRegistrado['cli_id']?>">
+        <input type="hidden" name="cli_id" id="cli_id" value="<?= $ClienteRegistrado['cli_id']?>">
         <div class="row mb-3">
             <div class="col">
                 <label for="cli_nombre">Nombre</label>
-                <input type="text" name="prod_nombre" id="prod_nombre" class="form-control" required value="<?= $ClienteRegistrado['cli_nombre'] ?>">
+                <input type="text" name="cli_nombre" id="cli_nombre" class="form-control" required value="<?= $ClienteRegistrado['cli_nombre'] ?>">
             </div>
         </div>
         <div class="row mb-3">
@@ -47,7 +47,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <a href="../../controladores/producto/buscar.php" class="btn btn-secondary w-100">Cancelar</a>
+                <a href="../../controladores/clientes/buscar.php" class="btn btn-secondary w-100">Cancelar</a>
             </div>
         </div>
     </form>
