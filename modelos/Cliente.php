@@ -57,11 +57,9 @@ class Cliente extends Conexion{
     }
 
     public function buscarId($id){
-        $sql = " SELECT * FROM clientes WHERE cli_situacion = 1 AND cli_id = $id";
-        $resultado = array_shift( self::servir($sql) );
+        $sql = " SELECT * FROM clientes WHERE cli_situacion = 1 AND cli_id = '$id' ";
+        $resultado =  self::servir($sql) ;
 
-        echo $resultado;
-        exit;
         return $resultado;
     }
 }
