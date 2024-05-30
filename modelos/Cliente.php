@@ -62,5 +62,11 @@ class Cliente extends Conexion{
 
         return $resultado;
     }
+
+    public function modificar(){
+        $sql = "UPDATE clientes SET cli_nombre = '$this->cli_nombre', cli_apellido = '$this->cli_apellido', cli_nit = '$this->cli_nit', cli_telefono = '$this->cli_telefono' WHERE cli_id = $this->cli_id ";
+        $resultado = $this->ejecutar($sql);
+        return $resultado; 
+    }
 }
 
