@@ -50,21 +50,13 @@ class Cliente extends Conexion{
         $cols = count($columnas) > 0 ? implode(',', $columnas) : '*';
         $sql = "SELECT $cols FROM clientes where cli_situacion = 1 ";
 
+
         if($this->cli_nombre != ''){
             $sql .= " AND cli_nombre like '%$this->cli_nombre%' ";
         }
         if($this->cli_apellido != ''){
             $sql .= " AND cli_apellido = $this->cli_apellido ";
         }
-
-        if($this->cli_nit != ''){
-            $sql .= " AND cli_nit = $this->cli_nit ";
-        }
-
-        if($this->cli_telefono != ''){
-            $sql .= " AND cli_telefono = $this->cli_telefono ";
-        }
-
 
         $resultado = self::servir($sql);
         return $resultado;
