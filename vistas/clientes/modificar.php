@@ -13,7 +13,7 @@
 
 <h1 class="text-center">Formulario de modificación de Clientes</h1>
 <div class="row justify-content-center">
-    <form action="/crud_2024/controladores/clientes/modificar.php" method="POST" class="border bg-light shadow rounded p-4 col-lg-6">
+    <form action="../../controladores/clientes/modificar.php" method="POST" class="border bg-light shadow rounded p-4 col-lg-6">
         
         <input type="hidden" name="cli_id" id="cli_id" value="<?= $ClienteRegistrado['cli_id']?>">
         <div class="row mb-3">

@@ -49,7 +49,7 @@ class Cliente extends Conexion{
             $sql .= " AND cli_nombre like '%$this->cli_nombre%' ";
         }
         if($this->cli_apellido != ''){
-            $sql .= " AND cli_apellido = $this->cli_apellido ";
+            $sql .= " AND cli_apellido like'%$this->cli_apellido%' ";
         }
 
         $resultado = self::servir($sql);
