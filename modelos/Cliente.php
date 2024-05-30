@@ -33,12 +33,6 @@ class Cliente extends Conexion{
       // METODO PARA CONSULTAR
 
       public static function buscarTodos(...$columnas){
-        // $cols = '';
-        // if(count($columnas) > 0){
-        //     $cols = implode(',', $columnas) ;
-        // }else{
-        //     $cols = '*';
-        // }
         $cols = count($columnas) > 0 ? implode(',', $columnas) : '*';
         $sql = "SELECT $cols FROM clientes where cli_situacion = 1 ";
         $resultado = self::servir($sql);
