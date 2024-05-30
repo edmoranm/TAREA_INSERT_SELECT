@@ -1,14 +1,16 @@
 <?php
+     ini_set('display_errors', '1');
+     ini_set('display_startup_errors', '1');
+     error_reporting(E_ALL);
 
 require '../../modelos/Cliente.php';
 
 // VALIDAR INFORMACION
+$_POST['cli_id'] = filter_var($_POST['cli_id'], FILTER_VALIDATE_INT);
 $_POST['cli_nombre'] = htmlspecialchars($_POST['cli_nombre']);
 $_POST['cli_apellido'] = htmlspecialchars($_POST['cli_apellido']);
-$_POST['cli_nit'] = filter_var($nit, FILTER_VALIDATE_INT);
-$_POST['cli_telefono'] = filter_var($telefono, FILTER_VALIDATE_INT);
-
-
+$_POST['cli_nit'] = filter_var($_POST['cli_nit'], FILTER_VALIDATE_INT);
+$_POST['cli_telefono'] = filter_var($_POST['cli_telefono'], FILTER_VALIDATE_INT);
 
 
 if ($_POST['cli_nombre'] == '' || $_POST['cli_apellido'] == '' || $_POST['cli_nit'] < 0 || $_POST['cli_telefono'] < 0) {
@@ -20,9 +22,9 @@ if ($_POST['cli_nombre'] == '' || $_POST['cli_apellido'] == '' || $_POST['cli_ni
 } else {
     try {
         // REALIZAR CONSULTA
-        $clientes = new Cliente($_POST);
+        $cliente = new Cliente($_POST);
 
-
+        
         $modificar = $cliente->modificar();
 
         $resultado = [
@@ -53,12 +55,11 @@ include_once '../../vistas/templates/header.php'; ?>
 <div class="row justify-content-center">
     <div class="col-lg-6 alert alert-<?= $alertas[$resultado['codigo']] ?>" role="alert">
         <?= $resultado['mensaje'] ?>
-        <?= $resultado['detalle'] ?>
     </div>
 </div>
 <div class="row justify-content-center">
     <div class="col-lg-6">
-        <a href="../../vistas/clientes/index.php" class="btn btn-primary w-100">Volver al formulario</a>
+        <a href="../../controladores/clientes/buscar.php" class="btn btn-primary w-100">Regresar</a>
     </div>
 </div>
 

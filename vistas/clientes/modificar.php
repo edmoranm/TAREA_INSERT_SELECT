@@ -6,14 +6,16 @@ $_GET['cli_id'] = filter_var(base64_decode($_GET['cli_id']), FILTER_SANITIZE_NUM
 $cliente = new Cliente();
 
 $ClienteRegistrado = $cliente->buscarId($_GET['cli_id']);
-var_dump($ClienteRegistrado);
 
 include_once '../../vistas/templates/header.php'; ?>
-
 <h1 class="text-center">MODIFICAR DE CLIENTE</h1>
 <div class="row justify-content-center">
     <form action="../../controladores/clientes/modificar.php" method="POST" class="border bg-light shadow rounded p-4 col-lg-6">
-        <input type="hidden" name="cli_id" id="cli_id" value="<?= $ClienteRegistrado['cli_id'] ?>">
+        <div class="row mb-3">
+            <div class="col">
+                <input type="hidden" name="cli_id" id="cli_id" class="form-control" required value="<?= $ClienteRegistrado['cli_id'] ?>">
+            </div>
+        </div>
         <div class="row mb-3">
             <div class="col">
                 <label for="cli_nombre">NOMBRE</label>
@@ -35,10 +37,10 @@ include_once '../../vistas/templates/header.php'; ?>
         <div class="row mb-3">
             <div class="col">
                 <label for="cli_telefono">TELEFONO</label>
-                <input type="text" name="cli_telefono" id="cli_telefono" class="form-control" required value="<?= $productoRegistrado['cli_telefono'] ?>">
+                <input type="text" name="cli_telefono" id="cli_telefono" class="form-control" required value="<?= $ClienteRegistrado['cli_telefono'] ?>">
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-3">
             <div class="col">
                 <button type="submit" class="btn btn-warning w-100">Modificar</button>
             </div>
