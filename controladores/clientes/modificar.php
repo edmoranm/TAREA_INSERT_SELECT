@@ -23,7 +23,7 @@ if ($_POST['cli_nombre'] == '' || $_POST['cli_apellido'] == '' || $_POST['cli_ni
         $clientes = new Cliente($_POST);
 
 
-        $modficar = $cliente->modificar();
+        $modificar = $cliente->modificar();
 
         $resultado = [
             'mensaje' => 'CLIENTE MODIFICADO CORRECTAMENTE',
