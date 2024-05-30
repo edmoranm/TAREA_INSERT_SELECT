@@ -34,11 +34,11 @@ include_once '../../vistas/templates/header.php'; ?>
                 <button type="submit" class="btn btn-secondary w-100">GUARDAR</button>
             </div>
         </div>
-        <!-- <div class="row">
+        <div class="row">
             <div class="col">
                 <a href="../../controladores/clientes/buscar.php" class="btn btn-secondary w-100">BUSCAR</a>
             </div>
-        </div> -->
+        </div>
     </form>
 </div>
 
