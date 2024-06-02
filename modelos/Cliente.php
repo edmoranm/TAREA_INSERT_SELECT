@@ -68,5 +68,13 @@ class Cliente extends Conexion{
         $resultado = $this->ejecutar($sql);
         return $resultado; 
     }
-}
 
+    public function eliminar(){
+        // $sql = "DELETE FROM clientes WHERE cli_id = $this->cli_id ";
+
+        // echo $sql;
+        $sql = "UPDATE clientes SET cli_situacion = 0 WHERE cli_id = $this->cli_id ";
+        $resultado = $this->ejecutar($sql);
+        return $resultado; 
+    }
+}
